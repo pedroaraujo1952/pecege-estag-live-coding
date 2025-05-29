@@ -9,11 +9,17 @@ namespace MyApi.Controllers
     {
         private readonly ICouponService _couponService;
         private readonly IProductService _productService;
+        private readonly IOrderService _orderService;
 
-        public ShoppingCartController([FromServices] ICouponService couponService, [FromServices] IProductService productService)
+        public ShoppingCartController(
+                [FromServices] ICouponService couponService, 
+                [FromServices] IProductService productService,
+                [FromServices] IOrderService orderService
+            )
         {
             _productService = productService; // considerar a existência de um método chamado UpdateAsync para atualizar produto
             _couponService = couponService; // considerar a existência de um método chamado validateAsync para validar cupons
+            _orderService = orderService;
         }
 
 

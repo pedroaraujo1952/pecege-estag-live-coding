@@ -1,3 +1,3 @@
 public class Coupon {
-  public double Percent;
+  public decimal Percent;
 }
