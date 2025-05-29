@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <div style="display: flex; align-items: center">
+      <p>Cupom:</p>
+      <input id="cupom" style="height: 20px" />
+    </div>
+    <button id="processCheckout">Processar Comprar</button>
+    <p>Total: R$<strong id="totalPrice">0</strong></p>
+
+    <script>
+      const product1 = { id: 123 };
+      const quantity = 5;
+
+      document
+        .getElementById("processCheckout")
+        .addEventListener("click", function () {
+          const products = [product1, product2, product3];
+
+          fetch("www.minha-REST-API.com.br/api/checkout", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: null,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data); // Printa os dados do objeto recebido
+            })
+            .catch((error) => {
+              console.error("Erro ao processar a compra", error);
+            });
+        });
+    </script>
+  </body>
+</html>
